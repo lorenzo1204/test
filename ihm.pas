@@ -3,7 +3,7 @@ unit IHM;
 {$mode objfpc}{$H+}
 
 interface
-procedure base():String;
+procedure base(titre:StrinG);
 function intro():string;
 function menuPrincipal() : String;
 function quitterJeu():string;
@@ -19,7 +19,10 @@ uses
   Classes, SysUtils, GestionEcran;
 
 procedure base(titre:String);
+var
+  msg:string;
 begin
+  msg:='-- '+titre+' --';
   effacerEtColorierEcran (Black);
   dessinerCadreXY(1,1,198,34,double,white,black);
   dessinerCadreXY(1,36,39,49, simple, white,black);
@@ -30,9 +33,9 @@ begin
   dessinerCadreXY(81,33,118,35,simple, white,black);
   deplacerCurseurXY(99-(Length('-- Vos Musiciens --')div 2),34);
   write('-- Vos Musiciens --');
-  deplacerCurseurXY(99-(Length('-- ',titre,' --')div 2),3);
+  deplacerCurseurXY(99-(Length(msg)div 2),3);
   couleurTexte(red);
-  write('-- ',titre,' --');
+  write(msg);
   dessinerCadreXY(135,1,198,5,double,white,black);
   deplacerCurseurXY (137,3);
   Write('Janvier 2022');
@@ -40,7 +43,6 @@ begin
   Write('Argent : ');
   deplacerCurseurXY (180,3);
   Write('Renomée : ');
-  dessinerCadreXY(10,6,30,10,simple,white,black);
 end;
 
 function intro():string;
@@ -91,6 +93,7 @@ end;
 function menuJeu():String;
 begin
   base('ECRAN DE JEU');
+  dessinerCadreXY(145,10,185,30,simple,white,black);
   deplacerCurseurXY(165-(length('Nombre de chanson non publiées : ')div 2),16);
   write('Nombre de chanson non publiées : ');
   deplacerCurseurXY(165-(length('Nombre d''albums sortis : ')div 2),20);
@@ -122,6 +125,7 @@ function ecranRecrutement():String;
 
 Begin
   base('RECRUTEMENT DES MUSICIENS');
+  dessinerCadreXY(10,6,30,10,simple,white,black);
   deplacerCurseurXY(20-(Length('PRENOM')div 2),8);
   write('PRENOM');
   dessinerCadreXY(30,6,50,10,simple,white,black);
@@ -212,6 +216,7 @@ function ecranDetail():String;
 
 Begin
   base('DETAILS DE VOS MUSICIENS');
+  dessinerCadreXY(10,6,30,10,simple,white,black);
   deplacerCurseurXY(20-(Length('PRENOM')div 2),8);
   write('PRENOM');
   dessinerCadreXY(30,6,50,10,simple,white,black);
