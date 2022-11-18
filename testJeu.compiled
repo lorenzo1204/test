@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus\fpc\3.2.2\bin\x86_64-win64\fpc.exe" Date="1420791944"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -gw2 -godwarfsets -gl -l -vewnhibq &quot;-FiD:\IUT INFO\sae\clc\ihm\lib\x86_64-win64&quot; &quot;-FuD:\IUT INFO\sae\clc\ihm\&quot; &quot;-FUD:\IUT INFO\sae\clc\ihm\lib\x86_64-win64\&quot; &quot;-FED:\IUT INFO\sae\clc\ihm\&quot; &quot;-oD:\IUT INFO\sae\clc\ihm\testJeu.exe&quot; testJeu.lpr"/>
+</CONFIG>
