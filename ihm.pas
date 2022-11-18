@@ -3,6 +3,7 @@ unit IHM;
 {$mode objfpc}{$H+}
 
 interface
+procedure base():String;
 function intro():string;
 function menuPrincipal() : String;
 function quitterJeu():string;
@@ -16,6 +17,31 @@ implementation
 
 uses
   Classes, SysUtils, GestionEcran;
+
+procedure base(titre:String);
+begin
+  effacerEtColorierEcran (Black);
+  dessinerCadreXY(1,1,198,34,double,white,black);
+  dessinerCadreXY(1,36,39,49, simple, white,black);
+  dessinerCadreXY(40,36,79,49, simple, white,black);
+  dessinerCadreXY(80,36,119,49, simple, white,black);
+  dessinerCadreXY(120,36,159,49, simple, white,black);
+  dessinerCadreXY(160,36,198,49, simple, white,black);
+  dessinerCadreXY(81,33,118,35,simple, white,black);
+  deplacerCurseurXY(99-(Length('-- Vos Musiciens --')div 2),34);
+  write('-- Vos Musiciens --');
+  deplacerCurseurXY(99-(Length('-- ',titre,' --')div 2),3);
+  couleurTexte(red);
+  write('-- ',titre,' --');
+  dessinerCadreXY(135,1,198,5,double,white,black);
+  deplacerCurseurXY (137,3);
+  Write('Janvier 2022');
+  deplacerCurseurXY (160,3);
+  Write('Argent : ');
+  deplacerCurseurXY (180,3);
+  Write('Renomée : ');
+  dessinerCadreXY(10,6,30,10,simple,white,black);
+end;
 
 function intro():string;
 begin
@@ -64,27 +90,7 @@ end;
 
 function menuJeu():String;
 begin
-  effacerEtColorierEcran (Black);
-  dessinerCadreXY(1,1,198,34,double,white,black);
-  dessinerCadreXY(1,36,39,49, simple, white,black);
-  dessinerCadreXY(40,36,79,49, simple, white,black);
-  dessinerCadreXY(80,36,119,49, simple, white,black);
-  dessinerCadreXY(120,36,159,49, simple, white,black);
-  dessinerCadreXY(160,36,198,49, simple, white,black);
-  dessinerCadreXY(81,33,118,35,simple, white,black);
-  deplacerCurseurXY(99-(Length('-- Vos Musiciens --')div 2),34);
-  write('-- Vos Musiciens --');
-  deplacerCurseurXY(99-(Length('-- ECRAN DE JEU --')div 2),3);
-  couleurTexte(red);
-  write('-- ECRAN DE JEU --');
-  dessinerCadreXY(135,1,198,5,double,white,black);
-  deplacerCurseurXY (137,3);
-  Write('Janvier 2022');
-  deplacerCurseurXY (160,3);
-  Write('Argent : ');
-  deplacerCurseurXY (180,3);
-  Write('Renomée : ');
-  dessinerCadreXY(145,10,185,30,simple,white,black);
+  base('ECRAN DE JEU');
   deplacerCurseurXY(165-(length('Nombre de chanson non publiées : ')div 2),16);
   write('Nombre de chanson non publiées : ');
   deplacerCurseurXY(165-(length('Nombre d''albums sortis : ')div 2),20);
@@ -115,27 +121,7 @@ end;
 function ecranRecrutement():String;
 
 Begin
-  effacerEtColorierEcran (Black);
-  dessinerCadreXY(1,1,198,34,double,white,black);
-  dessinerCadreXY(1,36,39,49, simple, white,black);
-  dessinerCadreXY(40,36,79,49, simple, white,black);
-  dessinerCadreXY(80,36,119,49, simple, white,black);
-  dessinerCadreXY(120,36,159,49, simple, white,black);
-  dessinerCadreXY(160,36,198,49, simple, white,black);
-  dessinerCadreXY(81,33,118,35,simple, white,black);
-  deplacerCurseurXY(99-(Length('-- Vos Musiciens --')div 2),34);
-  write('-- Vos Musiciens --');
-  deplacerCurseurXY(99-(Length('-- RECRUTEMENT DES MUSICIENS --')div 2),3);
-  couleurTexte(red);
-  write('-- RECRUTEMENT DES MUSICIENS --');
-  dessinerCadreXY(135,1,198,5,double,white,black);
-  deplacerCurseurXY (137,3);
-  Write('Janvier 2022');
-  deplacerCurseurXY (160,3);
-  Write('Argent : ');
-  deplacerCurseurXY (180,3);
-  Write('Renomée : ');
-  dessinerCadreXY(10,6,30,10,simple,white,black);
+  base('RECRUTEMENT DES MUSICIENS');
   deplacerCurseurXY(20-(Length('PRENOM')div 2),8);
   write('PRENOM');
   dessinerCadreXY(30,6,50,10,simple,white,black);
@@ -225,27 +211,7 @@ end;
 function ecranDetail():String;
 
 Begin
-  effacerEtColorierEcran (Black);
-  dessinerCadreXY(1,1,198,34,double,white,black);
-  dessinerCadreXY(1,36,39,49, simple, white,black);
-  dessinerCadreXY(40,36,79,49, simple, white,black);
-  dessinerCadreXY(80,36,119,49, simple, white,black);
-  dessinerCadreXY(120,36,159,49, simple, white,black);
-  dessinerCadreXY(160,36,198,49, simple, white,black);
-  dessinerCadreXY(81,33,118,35,simple, white,black);
-  deplacerCurseurXY(99-(Length('-- Vos Musiciens --')div 2),34);
-  write('-- Vos Musiciens --');
-  deplacerCurseurXY(99-(Length('-- DETAILS DE VOS MUSICIENS --')div 2),3);
-  couleurTexte(red);
-  write('-- DETAILS DE VOS MUSICIENS --');
-  dessinerCadreXY(135,1,198,5,double,white,black);
-  deplacerCurseurXY (137,3);
-  Write('Janvier 2022');
-  deplacerCurseurXY (160,3);
-  Write('Argent : ');
-  deplacerCurseurXY (180,3);
-  Write('Renomée : ');
-  dessinerCadreXY(10,6,30,10,simple,white,black);
+  base('DETAILS DE VOS MUSICIENS');
   deplacerCurseurXY(20-(Length('PRENOM')div 2),8);
   write('PRENOM');
   dessinerCadreXY(30,6,50,10,simple,white,black);
@@ -350,20 +316,7 @@ end;
 
 function ecranPlanning():string;
 begin
-  effacerEtColorierEcran (Black);
-  dessinerCadreXY(1,1,198,34,double,white,black);
-  dessinerCadreXY(1,36,39,49, simple, white,black);
-  dessinerCadreXY(40,36,79,49, simple, white,black);
-  dessinerCadreXY(80,36,119,49, simple, white,black);
-  dessinerCadreXY(120,36,159,49, simple, white,black);
-  dessinerCadreXY(160,36,198,49, simple, white,black);
-  dessinerCadreXY(81,33,118,35,simple, white,black);
-  deplacerCurseurXY(99-(Length('-- Vos Musiciens --')div 2),34);
-  write('-- Vos Musiciens --');
-  deplacerCurseurXY(99-(Length('-- PLANNING DE VOS MUSICIENS --')div 2),3);
-  couleurTexte(red);
-  write('-- PLANNING DE VOS MUSICIENS --');
-  dessinerCadreXY(135,1,198,5,double,white,black);
+  base('PLANNING DE VOS MUSICIENS');
   deplacerCurseurXY (137,3);
   Write('Janvier 2022');
   deplacerCurseurXY (160,3);
@@ -429,20 +382,7 @@ end;
 
 function ecranBilan():String;
 begin
-  effacerEtColorierEcran (Black);
-  dessinerCadreXY(1,1,198,34,double,white,black);
-  dessinerCadreXY(1,36,39,49, simple, white,black);
-  dessinerCadreXY(40,36,79,49, simple, white,black);
-  dessinerCadreXY(80,36,119,49, simple, white,black);
-  dessinerCadreXY(120,36,159,49, simple, white,black);
-  dessinerCadreXY(160,36,198,49, simple, white,black);
-  dessinerCadreXY(81,33,118,35,simple, white,black);
-  deplacerCurseurXY(99-(Length('-- Vos Musiciens --')div 2),34);
-  write('-- Vos Musiciens --');
-  deplacerCurseurXY(99-(Length('-- BILAN DU MOIS --')div 2),3);
-  couleurTexte(red);
-  write('-- BILAN DU MOIS --');
-  dessinerCadreXY(135,1,198,5,double,white,black);
+  base('BILAN DU MOIS');
   deplacerCurseurXY (137,3);
   Write('Janvier 2022');
   deplacerCurseurXY (160,3);
