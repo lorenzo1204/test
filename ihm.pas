@@ -12,6 +12,7 @@ function ecranRecrutement():String;
 function ecranDetail():String;
 function ecranPlanning():string;
 function ecranBilan():String;
+function indispo():string;
 
 implementation
 
@@ -30,6 +31,62 @@ begin
   dessinerCadreXY(80,36,119,49, simple, white,black);
   dessinerCadreXY(120,36,159,49, simple, white,black);
   dessinerCadreXY(160,36,198,49, simple, white,black);
+
+  deplacerCurseurXY(3,38);
+  write('Nom : ');
+  deplacerCurseurXY(3,40);
+  write('Prenom : ');
+  deplacerCurseurXY(3,42);
+  write('Instrument : ');
+  deplacerCurseurXY(3,44);
+  write('Endurance : ');
+  deplacerCurseurXY(3,47);
+  Write('Activite : ');
+
+  deplacerCurseurXY(43,38);
+  write('Nom : ');
+  deplacerCurseurXY(43,40);
+  write('Prenom : ');
+  deplacerCurseurXY(43,42);
+  write('Instrument : ');
+  deplacerCurseurXY(43,44);
+  write('Endurance : ');
+  deplacerCurseurXY(43,47);
+  Write('Activite : ');
+
+  deplacerCurseurXY(83,38);
+  write('Nom : ');
+  deplacerCurseurXY(83,40);
+  write('Prenom : ');
+  deplacerCurseurXY(83,42);
+  write('Instrument : ');
+  deplacerCurseurXY(83,44);
+  write('Endurance : ');
+  deplacerCurseurXY(83,47);
+  Write('Activite : ');
+
+  deplacerCurseurXY(123,38);
+  write('Nom : ');
+  deplacerCurseurXY(123,40);
+  write('Prenom : ');
+  deplacerCurseurXY(123,42);
+  write('Instrument : ');
+  deplacerCurseurXY(123,44);
+  write('Endurance : ');
+  deplacerCurseurXY(123,47);
+  Write('Activite : ');
+
+  deplacerCurseurXY(163,38);
+  write('Nom : ');
+  deplacerCurseurXY(163,40);
+  write('Prenom : ');
+  deplacerCurseurXY(163,42);
+  write('Instrument : ');
+  deplacerCurseurXY(163,44);
+  write('Endurance : ');
+  deplacerCurseurXY(163,47);
+  Write('Activite : ');
+
   dessinerCadreXY(81,33,118,35,simple, white,black);
   deplacerCurseurXY(99-(Length('-- Vos Musiciens --')div 2),34);
   write('-- Vos Musiciens --');
@@ -95,6 +152,8 @@ begin
 end;
 
 function menuJeu():String;
+var
+   ret: String;
 begin
   base('ECRAN DE JEU');
   dessinerCadreXY(145,10,185,30,simple,white,black);
@@ -112,6 +171,15 @@ begin
   write('Définir le planning des musiciens pour le mois : 3');
   deplacerCurseurXY(99-(length('Finir le mois : 4')div 2),22);
   write('Finir le mois : 4');
+  indispo();
+  deplacerCurseurXY(99-(length('choix : ')div 2), 25);
+  couleurTexte(White);
+  write('choix : ');
+  readln(ret);
+  menuJeu:=ret;
+end;
+function indispo():string;
+begin
   dessinerCadreXY(5,16,60,22,simple,red,black);
   deplacerCurseurXY(32-(length('-- Groupe non-valide --')div 2),17);
   write ('-- Groupe non-valide --');
@@ -121,8 +189,6 @@ begin
   write ('Le groupe doit comporter exactement un chanteur');
   deplacerCurseurXY(32-(length('Le groupe doit comporter au moins un batteur')div 2),21);
   write ('Le groupe doit comporter au moins un batteur');
-
-  readln();
 end;
 
 function ecranRecrutement():String;
