@@ -333,6 +333,8 @@ function ecranDetail():String;
    con1,con2,con3,con4,con5:string;
    endu1,endu2,endu3,endu4,endu5:string;
    sal1,sal2,sal3,sal4,sal5:string;
+   
+   i : Integer;
 Begin
   prenom1:= ('daniel');
   prenom2:= ('daniel');
@@ -618,6 +620,29 @@ Begin
   deplacerCurseurXY(165,6);
   Write(chr(194));
 
+  for i:= 0 to 4 do
+  deplacerCurseurXY(10,10+i*4);
+  write(chr(197));
+  deplacerCurseurXY(30,10+i*4);
+  Write(chr(197));
+  deplacerCurseurXY(50,10+i*4);
+  Write(chr(197));
+  deplacerCurseurXY(70,10+i*4);
+  Write(chr(197));
+  deplacerCurseurXY(90,10+i*4);
+  Write(chr(197));
+  deplacerCurseurXY(110,10+i*4);
+  Write(chr(197));
+  deplacerCurseurXY(130,10+i*4);
+  Write(chr(197));
+  deplacerCurseurXY(150,10+i*4);
+  Write(chr(197));
+  deplacerCurseurXY(165,10+i*4);
+  Write(chr(197));
+  deplacerCurseurXY(180,10+i*4);
+  write(chr(180));
+  
+  {
   deplacerCurseurXY(10,10);
   write(chr(197));
   deplacerCurseurXY(30,10);
@@ -730,6 +755,7 @@ Begin
   Write(chr(197));
   deplacerCurseurXY(180,26);
   write(chr(180));
+  }
 
   deplacerCurseurXY(10,30);
   write(chr(193));
