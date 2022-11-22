@@ -21,17 +21,36 @@ uses
 
 procedure base(titre:String);
 var
-  msg:string;
+  msg : string;
+  i,j : Integer;
 begin
   msg:='-- '+titre+' --';
   effacerEtColorierEcran (Black);
   dessinerCadreXY(1,1,198,34,double,white,black);
+  tableau(1,36,39,49,4,1,white,black);
+  {
   dessinerCadreXY(1,36,39,49, simple, white,black);
   dessinerCadreXY(40,36,79,49, simple, white,black);
   dessinerCadreXY(80,36,119,49, simple, white,black);
   dessinerCadreXY(120,36,159,49, simple, white,black);
+  }
   dessinerCadreXY(160,36,198,49, simple, white,black);
-
+  
+  
+  for i:= 0 to 4 do
+    deplacerCurseurXY(3+i*40,38);
+    write('Nom : ');
+    deplacerCurseurXY(3+i*40,40);
+    write('Prenom : ');
+    deplacerCurseurXY(3+i*40,42);
+    write('Instrument : ');
+    deplacerCurseurXY(3+i*40,44);
+    write('Endurance : ');
+    deplacerCurseurXY(3+i*40,47);
+    Write('Activite : ');
+      
+  
+  {
   deplacerCurseurXY(3,38);
   write('Nom : ');
   deplacerCurseurXY(3,40);
@@ -86,6 +105,7 @@ begin
   write('Endurance : ');
   deplacerCurseurXY(163,47);
   Write('Activite : ');
+  }
 
   dessinerCadreXY(81,33,118,35,simple, white,black);
   deplacerCurseurXY(99-(Length('-- Vos Musiciens --')div 2),34);
@@ -103,7 +123,7 @@ begin
   deplacerCurseurXY (160,3);
   Write('Argent : ');
   deplacerCurseurXY (180,3);
-  Write('Renomée : ');
+  Write('Renommée : ');
 end;
 
 function intro():string;
@@ -119,8 +139,8 @@ var
   msg, msg2, msg3,msg4 : string;
 begin
   msg:='Welcome to METAL MANAGER';
-  msg2:='Start the game : press 1';
-  msg3:='Left the game : press 0';
+  msg2:='To start the game : press 1';
+  msg3:='To quit the game : press 0';
   msg4:='Votre choix : ';
   effacerEtColorierEcran(black);
   deplacerCurseurXY(100-(Length(msg)div 2),20);
@@ -192,9 +212,24 @@ begin
 end;
 
 function ecranRecrutement():String;
-
 Begin
   base('RECRUTEMENT DES MUSICIENS');
+  tableau(10,6,30,10,7,1,white,black);
+  deplacerCurseurXY(20-(Length('PRENOM')div 2),8);
+  write('PRENOM');
+  deplacerCurseurXY(40-(Length('NOM')div 2),8);
+  write('NOM');
+  deplacerCurseurXY(60-(Length('INSTRUMENT')div 2),8);
+  write('INSTRUMENT');
+  deplacerCurseurXY(80-(Length('STYLE')div 2),8);
+  write('STYLE');
+  deplacerCurseurXY(100-(Length('NIV INSTRU')div 2),8);
+  write('NIV INSTRU');
+  deplacerCurseurXY(120-(Length('NIV STUDIO')div 2),8);
+  write('NIV STUDIO');
+  deplacerCurseurXY(140-(Length('NIV CONCERT')div 2),8);
+  write('NIV CONCERT');
+  {
   dessinerCadreXY(10,6,30,10,simple,white,black);
   deplacerCurseurXY(20-(Length('PRENOM')div 2),8);
   write('PRENOM');
@@ -216,6 +251,7 @@ Begin
   dessinerCadreXY(130,6,150,10,simple,white,black);
   deplacerCurseurXY(140-(Length('NIV CONCERT')div 2),8);
   write('NIV CONCERT');
+  }
   dessinerCadreXY(150,6,165,10,simple,white,black);
   deplacerCurseurXY(158-(Length('ENDURANCE')div 2),8);
   write('ENDURANCE');
@@ -223,7 +259,10 @@ Begin
   deplacerCurseurXY(173-(Length('SALAIRE')div 2),8);
   write('SALAIRE');
 
-
+  tableau(6,10,10,14,1,5,white,black);
+  tableau(10,10,30,14,7,5,white,black);
+  tableau(150,10,165,14,2,5,white,black);
+  {
   dessinerCadreXY(6,10,10,14,simple,white,black);
   dessinerCadreXY(10,10,30,14,simple,white,black);
   dessinerCadreXY(30,10,50,14,simple,white,black);
@@ -278,6 +317,7 @@ Begin
   dessinerCadreXY(130,26,150,30,simple,white,black);
   dessinerCadreXY(150,26,165,30,simple,white,black);
   dessinerCadreXY(165,26,180,30,simple,white,black);
+  }
 
   readln;
 end;
@@ -339,7 +379,25 @@ Begin
   sal3:=('8 000');
   sal4:=('8 000');
   sal5:=('8 000');
+  
+  
   base('DETAILS DE VOS MUSICIENS');
+  tableau(10,6,30,10,7,1,white,black);
+  deplacerCurseurXY(20-(Length('PRENOM')div 2),8);
+  write('PRENOM');
+  deplacerCurseurXY(40-(Length('NOM')div 2),8);
+  write('NOM');
+  deplacerCurseurXY(60-(Length('INSTRUMENT')div 2),8);
+  write('INSTRUMENT');
+  deplacerCurseurXY(80-(Length('STYLE')div 2),8);
+  write('STYLE');
+  deplacerCurseurXY(100-(Length('NIV INSTRU')div 2),8);
+  write('NIV INSTRU');
+  deplacerCurseurXY(120-(Length('NIV STUDIO')div 2),8);
+  write('NIV STUDIO');
+  deplacerCurseurXY(140-(Length('NIV CONCERT')div 2),8);
+  write('NIV CONCERT');
+  {
   dessinerCadreXY(10,6,30,10,simple,white,black);
   deplacerCurseurXY(20-(Length('PRENOM')div 2),8);
   write('PRENOM');
@@ -361,6 +419,7 @@ Begin
   dessinerCadreXY(130,6,150,10,simple,white,black);
   deplacerCurseurXY(140-(Length('NIV CONCERT')div 2),8);
   write('NIV CONCERT');
+  }
   dessinerCadreXY(150,6,165,10,simple,white,black);
   deplacerCurseurXY(158-(Length('ENDURANCE')div 2),8);
   write('ENDURANCE');
@@ -368,7 +427,11 @@ Begin
   deplacerCurseurXY(173-(Length('SALAIRE')div 2),8);
   write('SALAIRE');
 
-
+  tableau(6,10,10,14,1,5,white,black);
+  tableau(10,10,30,14,7,5,white,black);
+  tableau(150,10,165,14,2,5,white,black);
+  
+  {
   dessinerCadreXY(6,10,10,14,simple,white,black);
   dessinerCadreXY(10,10,30,14,simple,white,black);
   dessinerCadreXY(30,10,50,14,simple,white,black);
@@ -379,6 +442,7 @@ Begin
   dessinerCadreXY(130,10,150,14,simple,white,black);
   dessinerCadreXY(150,10,165,14,simple,white,black);
   dessinerCadreXY(165,10,180,14,simple,white,black);
+  }
 
   deplacerCurseurXY(8,12);
   write('1');
@@ -400,7 +464,8 @@ Begin
   write(endu1);
   deplacerCurseurXY(173-(length(sal1)div 2),12);
   write(sal1);
-
+  
+  {
   dessinerCadreXY(6,14,10,18,simple,white,black);
   dessinerCadreXY(10,14,30,18,simple,white,black);
   dessinerCadreXY(30,14,50,18,simple,white,black);
@@ -411,6 +476,7 @@ Begin
   dessinerCadreXY(130,14,150,18,simple,white,black);
   dessinerCadreXY(150,14,165,18,simple,white,black);
   dessinerCadreXY(165,14,180,18,simple,white,black);
+  }
 
   deplacerCurseurXY(8,16);
   write('2');
@@ -433,6 +499,7 @@ Begin
   deplacerCurseurXY(173-(length(sal2)div 2),16);
   write(sal2);
 
+  {
   dessinerCadreXY(6,18,10,22,simple,white,black);
   dessinerCadreXY(10,18,30,22,simple,white,black);
   dessinerCadreXY(30,18,50,22,simple,white,black);
@@ -443,6 +510,7 @@ Begin
   dessinerCadreXY(130,18,150,22,simple,white,black);
   dessinerCadreXY(150,18,165,22,simple,white,black);
   dessinerCadreXY(165,18,180,22,simple,white,black);
+  }
 
   deplacerCurseurXY(8,20);
   write('3');
@@ -465,6 +533,7 @@ Begin
   deplacerCurseurXY(173-(length(sal3)div 2),20);
   write(sal3);
 
+  {
   dessinerCadreXY(6,22,10,26,simple,white,black);
   dessinerCadreXY(10,22,30,26,simple,white,black);
   dessinerCadreXY(30,22,50,26,simple,white,black);
@@ -475,6 +544,7 @@ Begin
   dessinerCadreXY(130,22,150,26,simple,white,black);
   dessinerCadreXY(150,22,165,26,simple,white,black);
   dessinerCadreXY(165,22,180,26,simple,white,black);
+  }
 
   deplacerCurseurXY(8,24);
   write('4');
@@ -496,7 +566,8 @@ Begin
   write(endu4);
   deplacerCurseurXY(173-(length(sal4)div 2),24);
   write(sal4);
-
+  
+  {
   dessinerCadreXY(6,26,10,30,simple,white,black);
   dessinerCadreXY(10,26,30,30,simple,white,black);
   dessinerCadreXY(30,26,50,30,simple,white,black);
@@ -507,6 +578,7 @@ Begin
   dessinerCadreXY(130,26,150,30,simple,white,black);
   dessinerCadreXY(150,26,165,30,simple,white,black);
   dessinerCadreXY(165,26,180,30,simple,white,black);
+  }
 
   deplacerCurseurXY(8,28);
   write('5');
@@ -777,14 +849,14 @@ begin
   deplacerCurseurXY(150-(length('BILAN FINANCIER') div 2),8);
   couleurTexte(white);
   write('BILAN FINANCIER :');
-  deplacerCurseurXY(150-(length('La vente des albums a rapporté 0 ce mois-ci')div 2),12);
-  write('La vente des albums a rapporté 0 ce mois-ci');
-  deplacerCurseurXY(150-(length('La renomé total a augmenter de : ')div 2),16);
-  write('La renomé total a augmenter de : ');
+  deplacerCurseurXY(150-(length('La vente des albums a rapporte 0 ce mois-ci')div 2),12);
+  write('La vente des albums a rapporte 0 ce mois-ci');
+  deplacerCurseurXY(150-(length('La renommee total a augmente de : ')div 2),16);
+  write('La renommee total a augmente de : ');
 
   deplacerCurseurXY(150-(length('<< Appuyez sur ENTREE pour passer au mois suivant >>')div 2),28);
   couleurTexte(red);
-  write('<< Appuyez sur ENTRE pour passer au mois suivant >>');
+  write('<< Appuyez sur ENTREE pour passer au mois suivant >>');
   readln;
 end;
 
