@@ -6,36 +6,66 @@ interface
 uses
   creerperso;
 
+// dessine une base commune à la plupart des 'pages' du jeu // Fonction Utilitaire
 procedure base(titre:StrinG);
+
+// affiche l'intro (qui disparaît après 2 secondes)
 procedure intro;
+
+// affiche la page d'accueil du jeu
 procedure menuPrincipal;
+
+// affiche une page unique indiquant que vous avez quitté le jeu
 procedure quitterJeu;
+
+// affiche la page principale du jeu 
 procedure menuJeu;
+
+// affiche la page depuis laquelle on peut recruter des musiciens
 procedure ecranRecrutement;
+
+// affiche le tableau contenant les musiciens du groupe
 procedure ecranDetail;
+
+// affiche la première ligne du tableau de recrutement // Fonction Utilitaire
 procedure hautTableau();
+
+// affiche le reste du tableau recrutement // Fonction Utilitaire
 procedure leTableau();
+
+// complète les lignes du tableau partiellement effacées a cause du fait que les cases se chevauchent // Fonction Utilitaire
 procedure completeTableau();
+
+// affiche la page depuis laquelle on peut sélectionner les actions des musiciens
 procedure ecranPlanning;
+
+// affiche la page récapitulant le mois passé
 procedure ecranBilan;
+
+// affiche une erreur en cas de non validité du groupe ( erreurs différentes selon la raison )
 procedure indispo;
+
+// affiche une erreur liée au recrutement ( erreurs différentes selon la raison )
 procedure messageErreurRecrutement;
 
-var
-   prenom1,prenom2,prenom3,prenom4,prenom5:string;
+
+var // variables contenant des informations sur les statistiques des musiciens
+   prenom1,prenom2,prenom3,prenom4,prenom5:string; 
    nom1,nom2,nom3,nom4,nom5:string;
-   instru1,instru2,instru3,instru4,instru5:string;
-   sty1,sty2,sty3,sty4,sty5:string;
-   nivIn1,nivIn2,nivIn3,nivIn4,nivIn5:niveau;
-   stu1,stu2,stu3,stu4,stu5:niveau;
-   con1,con2,con3,con4,con5:niveau;
-   endu1,endu2,endu3,endu4,endu5:integer;
-   sal1,sal2,sal3,sal4,sal5:integer;
+   instru1,instru2,instru3,instru4,instru5:string; // instrument
+   sty1,sty2,sty3,sty4,sty5:string; // style
+   nivIn1,nivIn2,nivIn3,nivIn4,nivIn5:niveau; // niveau instrument
+   stu1,stu2,stu3,stu4,stu5:niveau; // niveau studio
+   con1,con2,con3,con4,con5:niveau; // niveau concert
+   endu1,endu2,endu3,endu4,endu5:integer; // endurance
+   sal1,sal2,sal3,sal4,sal5:integer; // salaire
+
 
 implementation
 
 uses
   Classes, SysUtils, GestionEcran, recrutement, jeu;
+
 
 procedure base(titre:String);
 var
@@ -124,12 +154,14 @@ begin
   Write('Renomée : ');
 end;
 
+
 procedure intro;
 begin
   changerTailleConsole(200,50);
   effacerEtColorierEcran(Red);
   attendre(2000);
 end;
+
 
 procedure menuPrincipal;
 var
@@ -150,7 +182,6 @@ begin
   write(msg3);
   deplacerCurseurXY(100-(Length(msg4)div 2),30);
   write(msg4);
-
 end;
 
 procedure quitterJeu;
@@ -166,6 +197,7 @@ begin
   effacerEtColorierEcran(Red);
   readln();
 end;
+
 
 procedure menuJeu;
 begin
@@ -189,8 +221,9 @@ begin
   deplacerCurseurXY(99-(length('choix : ')div 2), 25);
   couleurTexte(White);
   write('choix : ');
-
 end;
+
+
 procedure indispo;
 begin
   dessinerCadreXY(5,16,60,22,simple,red,black);
@@ -204,8 +237,8 @@ begin
   write ('Le groupe doit comporter au moins un batteur');
 end;
 
-procedure ecranDetail;
 
+procedure ecranDetail;
 Begin
   prenom1:= (perso1.prenomMusicien);
   prenom2:= (perso2.prenomMusicien);
@@ -372,9 +405,8 @@ Begin
   Write('0 - Quitter');
   deplacerCurseurXY(182,20);
   write('Votre choix : ');
-
-
 end;
+
 
 procedure ecranRecrutement;
 Begin
@@ -541,8 +573,9 @@ Begin
   Write('personnage');
   deplacerCurseurXY(182,15);
   Write('0 - Quitter');
-
 end;
+
+
 procedure hautTableau;
 begin
   dessinerCadreXY(10,6,30,10,simple,white,black);
@@ -573,6 +606,8 @@ begin
   deplacerCurseurXY(173-(Length('SALAIRE')div 2),8);
   write('SALAIRE');
 end;
+
+
 procedure leTableau();
 begin
   dessinerCadreXY(6,10,10,14,simple,white,black);
@@ -630,6 +665,8 @@ begin
   dessinerCadreXY(150,26,165,30,simple,white,black);
   dessinerCadreXY(165,26,180,30,simple,white,black);
 end;
+
+
 procedure completeTableau();
 begin
     deplacerCurseurXY(30,6);
@@ -782,6 +819,7 @@ begin
   Write(chr(193));
 end;
 
+
 procedure ecranPlanning;
 begin
   base('PLANNING DE VOS MUSICIENS');
@@ -844,8 +882,8 @@ begin
   write('2 : S''entrainer');
   deplacerCurseurXY(180-(Length('3 : Faire la promo du groupe')div 2),28);
   write('3 : Faire la promo du groupe');
-
 end;
+
 
 procedure ecranBilan;
 begin
@@ -887,6 +925,7 @@ begin
   write('<< Appuyez sur ENTREE pour passer au mois suivant >>');
 end;
 
+
 procedure messageErreurRecrutement();
 begin
   dessinerCadreXY(50,10,150,20,simple,red,black);
@@ -896,8 +935,8 @@ begin
   couleurTexte(white);
 end;
 
+
 //procedure ecranWin(): String;
 
 
 end.
-
