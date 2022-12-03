@@ -6,6 +6,7 @@ interface
 uses
   IHM, gestionEcran, creerperso, recrutement;
 
+// permet de virer un musicien, selon le chiffre sélectionné, les statistiques du musicien se situant au même emplacement seront effacés.
 procedure virer();
 
 var
