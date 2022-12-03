@@ -184,6 +184,7 @@ begin
   write(msg4);
 end;
 
+
 procedure quitterJeu;
 var
   msg:string;
@@ -643,7 +644,7 @@ begin
   dessinerCadreXY(150,18,165,22,simple,white,black);
   dessinerCadreXY(165,18,180,22,simple,white,black);
 
-   dessinerCadreXY(6,22,10,26,simple,white,black);
+  dessinerCadreXY(6,22,10,26,simple,white,black);
   dessinerCadreXY(10,22,30,26,simple,white,black);
   dessinerCadreXY(30,22,50,26,simple,white,black);
   dessinerCadreXY(50,22,70,26,simple,white,black);
@@ -934,9 +935,4 @@ begin
   write('Erreur : Vous avez deja 5 musiciens, virez-en un pour en recruter un nouveau');
   couleurTexte(white);
 end;
-
-
-//procedure ecranWin(): String;
-
-
 end.
